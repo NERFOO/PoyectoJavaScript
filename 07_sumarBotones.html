@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Sumar botones</h1>
+    <button id="btn1">4</button>
+    <button id="btn2">5</button>
+    <button id="btn3">1</button>
+    <button id="btn4">10</button>
+
+    <h1 id="resultado"></h1>
+
+</body>
+<script>
+    var suma = 0;
+
+    window.onload = function() {
+        //EJERCICIO 1
+        // var btn1 = document.getElementById("btn1").addEventListener("click", sumar);
+        // var btn2 = document.getElementById("btn2").addEventListener("click", sumar);
+        // var btn3 = document.getElementById("btn3").addEventListener("click", sumar);
+        // var btn4 = document.getElementById("btn4").addEventListener("click", sumar);
+
+        //EJERCICIO 2
+        //BUSCAMOS TODOS LOS OBJETOS QUE SEAN DE TIPO BUTTON
+        var botones = document.getElementsByTagName("button");
+        //RECORREMOS TODOS LOS BOTONES
+        for ( var i = 0; i < botones.length; i++) {
+            //RECUPERRAMOS CADA BOTON INDIVIDUALMENTE
+            var boton = botones[i];
+            //ASOCIAMOS EL BOTON AL EVENTO
+            boton.addEventListener("click", function() {
+                this.style.background = "red";
+
+                suma += parseInt(this.innerText);
+                document.getElementById("resultado").innerText = "La suma es " + suma;
+            });
+
+        }
+    }
+
+    //EJERCICIO 1 Y 2
+    // function sumar() {
+    //         suma += parseInt(this.innerText);
+    //         document.getElementById("resultado").innerText = "La suma es" + suma;
+    // }
+
+
+
+
+</script>
+</html>

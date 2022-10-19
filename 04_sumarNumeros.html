@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Sumar numeros</h1>
+    <label>Introduce numeros</label>
+    <input type="text"id="cajanumeros">
+    <button onclick="sumarNumeros()">Sumar numeros</button>
+    <h1 id="resultado"></h1>
+
+</body>
+<script>
+    function sumarNumeros() {
+        var cajanumeros = document.getElementById("cajanumeros").value;
+
+        var suma = 0;
+
+        for(let i = 0; i < cajanumeros.length; i++) {
+            var caracter = parseInt(cajanumeros.charAt(i));
+            suma += caracter;
+        }
+        document.getElementById("resultado").innerText = suma;
+    }
+</script>
+</html>
